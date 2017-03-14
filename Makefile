@@ -23,10 +23,12 @@ eqTARGET=eqHisto.o
 denoiseSOURCE=noiseReduction.cpp
 denoiseTARGET=noiseReduction.o
 
-all: develop balance stack eq denoise
+devTestSOURCE=developerTesting.cpp
+devTestTARGET=developerTesting.o
+
+all: develop balance stack eq denoise devtest
 
 develop:
-
 	$(CC) $(CLIBRAW) $(developSOURCE) $(LIBLIBRAW) -o $(developTARGET)
 
 balance:
@@ -41,3 +43,5 @@ eq:
 denoise:
 	$(CC) $(COPENCV) $(denoiseSOURCE) $(LIBOPENCV) -o $(denoiseTARGET)
 
+devtest:
+	$(CC) $(CLIBRAW) $(devTestSOURCE) $(LIBLIBRAW) -o $(devTestTARGET)
