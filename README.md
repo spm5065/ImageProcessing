@@ -12,3 +12,7 @@ Small programs for image processing
 **rawDevelop** develops raw images using the AMaZE demosaicking algorithm
 
 **whiteBalance** applies a automatically computed white balance to an image
+
+**blurDetection** calculates estimated blur using a modified laplacian. 
+The lower the result, the higher the estimated blur is.
+This method was described in a paper written by J. L. Pech-Pacheco, G. Cristobal, J. Chamorro-Martinez, and j. Fernandez-Valdivia. It was found at [http://optica.csic.es/papers/icpr2k.pdf](http://optica.csic.es/papers/icpr2k.pdf)
