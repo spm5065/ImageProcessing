@@ -23,10 +23,13 @@ eqTARGET=eqHisto.o
 denoiseSOURCE=noiseReduction.cpp
 denoiseTARGET=noiseReduction.o
 
-devTestSOURCE=developerTesting.cpp
-devTestTARGET=developerTesting.o
+devTestSOURCE=developMethodTesting.cpp
+devTestTARGET=developMethodTesting.o
 
-all: develop balance stack eq denoise devtest
+blurSOURCE=blurDetection.cpp
+blurTARGET=blurDetection.o
+
+all: develop balance stack eq denoise devtest blur
 
 develop:
 	$(CC) $(CLIBRAW) $(developSOURCE) $(LIBLIBRAW) -o $(developTARGET)
@@ -45,3 +48,6 @@ denoise:
 
 devtest:
 	$(CC) $(CLIBRAW) $(devTestSOURCE) $(LIBLIBRAW) -o $(devTestTARGET)
+
+blur:
+	$(CC) $(COPENCV) $(blurSOURCE) $(LIBOPENCV) -o $(blurTARGET)
